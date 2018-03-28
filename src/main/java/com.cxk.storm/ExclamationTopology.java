@@ -18,6 +18,7 @@ public class ExclamationTopology {
         builder.setBolt("print", new PrintBolt(), 1).shuffleGrouping("addGTH");
 
         Config conf = new Config();
+        //上线之前都要改成false否则日志会非常多
         conf.setDebug(true);
 
         if (args != null && args.length > 0) {
